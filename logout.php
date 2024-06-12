@@ -1,0 +1,10 @@
+<?php
+  session_start();
+  session_unset();
+  session_destroy();
+  if(isset($_COOKIE['user'])){
+    setcookie('user',"",time()-60);
+    setcookie('role',"",time()-60);
+  }
+  header('location:index.php');
+ ?>
